@@ -1,0 +1,265 @@
+{
+  "user": [
+    {
+      "id": "19a2",
+      "user_role": "job seeker",
+      "user_name": "job seeker",
+      "password": "123",
+      "name": "sajeevan",
+      "dob": "2001-05-19",
+      "age": "23",
+      "nationality": "indian",
+      "user_gender": "Male",
+      "mobile_number": "08220512105",
+      "address": "no.4/55,4th street,",
+      "emailAddress": "sajeevan.b@nilaapps.co.in",
+      "idproof": "0912001230",
+      "community": "OC",
+      "educationqualification": "IT",
+      "poverty_status": "No",
+      "physically_handicapped": "No",
+      "working_experience": "Yes",
+      "experience_years": "3",
+      "textilesector": "none",
+      "preferred_post": "chennai",
+      "certificate": {},
+      "salary_expectation": "50000",
+      "perferred_district": "District-1"
+    },
+    {
+      "id": "2b7a",
+      "user_role": "employer",
+      "user_name": "employer",
+      "password": "123",
+      "company_name": "sagfashion",
+      "business_nature": "Textile",
+      "establishment_year": "12",
+      "gst_number": "12319781231",
+      "registration_number": "0099331",
+      "address": "no.4/55,4th street,",
+      "contact_person_name": "abinesh",
+      "contact_person_number": "723882732",
+      "unitdetails": "1",
+      "works_number": "43",
+      "Town": "3",
+      "District_name": "none"
+    },
+    {
+      "id": "3159",
+      "user_role": "training seeker",
+      "user_name": "training seeker",
+      "password": "123",
+      "name": "sajeevan Training Seeker",
+      "dob": "2024-10-12",
+      "age": "23",
+      "nationality": "indian",
+      "user_gender": "Male",
+      "mobile_number": "08220512105",
+      "address": "no.4/55,4th street,",
+      "emailAddress": "sajeevan.b@nilaapps.co.in",
+      "idproof": "12312312312",
+      "community": "oc",
+      "educationqualification": "IT",
+      "poverty_status": "No",
+      "physically_handicapped": "No",
+      "textilesector": "none",
+      "agencydetails": "none"
+    },
+    {
+      "id": "6838",
+      "user_role": "admin",
+      "user_name": "admin",
+      "password": "admin"
+    }
+  ],
+  "job-post": [
+    {
+      "id": "1",
+      "title": "React Developer",
+      "companyName": "Tech Solutions Inc.",
+      "location": "Remote",
+      "jobDescription": "We are seeking a skilled React Developer to join our team and contribute to exciting projects.",
+      "qualifications": {
+        "education": "Bachelor's degree in Computer Science or related field",
+        "experience": "2+ years of experience in React development",
+        "skills": [
+          "JavaScript",
+          "React",
+          "CSS"
+        ]
+      },
+      "fav": false,
+      "type": "Full time",
+      "salaryRange": "$50k-80k",
+      "opening": "3",
+      "JobPosted": "14 June, 2021",
+      "expirein": "June 30, 2025",
+      "description": "Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus. Duis et est ac leo rhoncus tincidunt vitae vehicula augue. Donec in suscipit diam. Pellentesque quis justo sit amet arcu commodo sollicitudin.",
+      "responsibilities": [
+        {
+          "title": "Writing Clean, Efficient Code"
+        },
+        {
+          "title": "Collaborating with Cross-Functional Teams"
+        },
+        {
+          "title": "Debugging and Troubleshooting"
+        },
+        {
+          "title": "Participating in Code Reviews"
+        },
+        {
+          "title": "Testing and Quality Assurance"
+        },
+        {
+          "title": "Staying Up-to-Date with Technologies"
+        },
+        {
+          "title": "Documenting Code and Processes"
+        }
+      ],
+      "profileImage": "https://img.freepik.com/free-photo/portrait-smiling-businessman-3d-rendering-3d-illustration_1142-51315.jpg"
+    },
+    {
+      "id": "2",
+      "fav": true,
+      "title": "Backend Developer",
+      "companyName": "Innovatech LLC",
+      "location": "On-site, New York, NY",
+      "jobDescription": "Looking for a Backend Developer to build and maintain server-side applications.",
+      "qualifications": {
+        "education": "Bachelor's degree in Software Engineering or equivalent",
+        "experience": "3+ years of experience in backend development",
+        "skills": [
+          "Node.js",
+          "Express",
+          "MongoDB"
+        ]
+      },
+      "type": "Part time",
+      "salaryRange": "$80,000 - $100,000",
+      "opening": "5",
+      "JobPosted": "10 July, 2021",
+      "expirein": "June 30, 2025",
+      "description": "Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus. Duis et est ac leo rhoncus tincidunt vitae vehicula augue. Donec in suscipit diam.",
+      "responsibilities": [
+        {
+          "title": "Developing and Maintaining APIs"
+        },
+        {
+          "title": "Implementing Security Best Practices"
+        },
+        {
+          "title": "Optimizing Application Performance"
+        }
+      ],
+      "profileImage": "https://img.freepik.com/free-photo/portrait-young-businessman-with-mustache-his-face-3d-rendering_1142-38839.jpg"
+    },
+    {
+      "id": "3",
+      "fav": true,
+      "title": "Full Stack Developer",
+      "companyName": "Creative Solutions Co.",
+      "location": "Hybrid, San Francisco, CA",
+      "jobDescription": "Join our team as a Full Stack Developer to work on innovative web applications.",
+      "qualifications": {
+        "education": "Bachelor's degree in a related field",
+        "experience": "3+ years of full-stack development experience",
+        "skills": [
+          "JavaScript",
+          "React",
+          "Node.js",
+          "SQL"
+        ]
+      },
+      "type": "Temporary",
+      "salaryRange": "$90,000 - $120,000",
+      "opening": "1",
+      "JobPosted": "1 August, 2021",
+      "expirein": "June 30, 2025",
+      "description": "Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus. Duis et est ac leo rhoncus tincidunt vitae vehicula augue.",
+      "responsibilities": [
+        {
+          "title": "Building and Deploying Full-Stack Applications"
+        },
+        {
+          "title": "Designing Database Models"
+        },
+        {
+          "title": "Ensuring Application Scalability"
+        }
+      ],
+      "profileImage": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg"
+    },
+    {
+      "id": "4",
+      "fav": true,
+      "title": "UI/UX Designer",
+      "companyName": "Design Hub",
+      "location": "Remote",
+      "jobDescription": "We are looking for a UI/UX Designer to create user-friendly interfaces.",
+      "qualifications": {
+        "education": "Bachelor's degree in Design or related field",
+        "experience": "2+ years of experience in UI/UX design",
+        "skills": [
+          "Figma",
+          "Adobe XD",
+          "User Research"
+        ]
+      },
+      "type": "Freelance",
+      "salaryRange": "$70,000 - $90,000",
+      "opening": "9",
+      "JobPosted": "22 May, 2021",
+      "expirein": "June 30, 2025",
+      "description": "Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus.",
+      "responsibilities": [
+        {
+          "title": "Designing User-Centered Interfaces"
+        },
+        {
+          "title": "Conducting User Research"
+        },
+        {
+          "title": "Creating Wireframes and Prototypes"
+        }
+      ],
+      "profileImage": "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611716.jpg"
+    },
+    {
+      "id": "5",
+      "fav": false,
+      "title": "Data Scientist",
+      "companyName": "Data Analytics Corp.",
+      "location": "On-site, Austin, TX",
+      "jobDescription": "Seeking a Data Scientist to analyze complex data sets and provide insights.",
+      "qualifications": {
+        "education": "Master's degree in Data Science or related field",
+        "experience": "3+ years of experience in data analysis",
+        "skills": [
+          "Python",
+          "R",
+          "Machine Learning"
+        ]
+      },
+      "type": "Full time",
+      "salaryRange": "$100,000 - $130,000",
+      "opening": "10",
+      "JobPosted": "5 July, 2021",
+      "expirein": "June 30, 2025",
+      "description": "Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus.",
+      "responsibilities": [
+        {
+          "title": "Analyzing Data Sets"
+        },
+        {
+          "title": "Developing Predictive Models"
+        },
+        {
+          "title": "Collaborating with Engineering Teams"
+        }
+      ],
+      "profileImage": "https://img.freepik.com/free-photo/portrait-young-businessman-with-mustache-glasses-3d-rendering_1142-51509.jpg"
+    }
+  ]
+}
