@@ -1,10 +1,11 @@
 import { User } from '../models/user.models.js';
-import bcryptjs from 'bcryptjs'; 
+import bcryptjs from 'bcryptjs';
 import crypto from 'crypto'
 import { generateTokenAndSetCookie } from '../utils/generateTokenAndSetCookie.js';
-import { sendPasswordResetEmail, sendVerificationEmail, sendWelcomeEmail } from '../mailtrap/emails.js';
+import { sendPasswordResetEmail, sendResetSuccessEmail, sendVerificationEmail, sendWelcomeEmail } from '../mailtrap/emails.js';
 
-// Signup
+
+
 export const signup = async (req, res) => {
   const { email, password, name } = req.body;
 
@@ -55,6 +56,7 @@ export const signup = async (req, res) => {
   }
 };
 
+
 export const verifyEmail = async (req, res) => {
   const { code } = req.body;
   try {
@@ -94,7 +96,7 @@ export const verifyEmail = async (req, res) => {
   }
 }
 
-// Login
+
 export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -135,7 +137,7 @@ export const login = async (req, res) => {
   }
 };
 
-// Logout
+
 export const logout = async (req, res) => {
   res.clearCookie("token");
   res.status(200).json({
@@ -144,12 +146,11 @@ export const logout = async (req, res) => {
   })
 };
 
-
 export const forgotPassword = async (req, res) => {
-  const {email} = req.body;
+  const { email } = req.body;
   try {
-    const user = await User.findOne({email});
-    if(!user) {
+    const user = await User.findOne({ email });
+    if (!user) {
       return res.status(400).json({
         success: false,
         message: "User not found"
@@ -164,12 +165,12 @@ export const forgotPassword = async (req, res) => {
 
     await user.save();
 
-    await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/forgot-password/${resetToken}`)
+    await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}reset-password/${resetToken}`)
     res.status(200).json({
       success: true,
       message: "Password reset link sent to your email"
     })
-    
+
   } catch (error) {
     console.log('Error  in forgotpassword');
     res.status(500).json({
@@ -179,18 +180,18 @@ export const forgotPassword = async (req, res) => {
   }
 }
 
-
 export const resetPassword = async (req, res) => {
   try {
-    const {token} = req.params;
-    const {password} = req.body
+    const { token } = req.params;
+    const { password } = req.body
 
     const user = await User.findOne({
       resetPasswordToken: token,
-      resetPasswordExpirresAt: {$gt: Date.now()},
+      resetPasswordExpirresAt: { $gt: Date.now() },
     })
 
-    if(!user) {
+    if (!user) {
+      console.log("Invalid or expired reset token");
       return res.status(400).json({
         success: false,
         message: "Invalid or expired reset token"
@@ -199,9 +200,9 @@ export const resetPassword = async (req, res) => {
 
     const hasdedPassword = await bcryptjs.hash(password, 20);
     user.password = hasdedPassword,
-    user.resetPasswordToken = undefined,
-    user.resetPasswordExpirresAt = undefined,
-    await user.save();
+      user.resetPasswordToken = undefined,
+      user.resetPasswordExpirresAt = undefined,
+      await user.save();
 
     await sendResetSuccessEmail(user.email)
 
@@ -211,5 +212,22 @@ export const resetPassword = async (req, res) => {
     })
   } catch (error) {
     console.log("Error in res");
+  }
+}
+
+export const checkAuth = async (req, res) => {
+  try {
+    const user = await User.findById(req.userId).select("-password");
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "User not found"
+      },
+        res.status(200).json({ success: true, user })
+      )
+    }
+  } catch (error) {
+    console.log("Error in checkAuth", error);
+    res.status(400).json({ success: false, message: error.message})
   }
 }
