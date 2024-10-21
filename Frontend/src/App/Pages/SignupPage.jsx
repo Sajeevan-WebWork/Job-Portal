@@ -7,6 +7,7 @@ import InputField from '../Components/InputField'
 import { ChevronDown } from 'lucide-react'
 import JobSeekerForm from '../Components/JobSeekerForm'
 import toast, { Toaster } from 'react-hot-toast';
+import { motion } from 'framer-motion'
 
 
 
@@ -87,10 +88,12 @@ const SignupPage = () => {
 
     return (
         <>
-            <div className="max-w-3xl md:py-4 w-full flex items-center justify-center m-auto pb-10 hidden">
-                <JobSeekerForm />
-            </div>
-            <div className='max-w-4xl md:py-4 w-full flex items-center justify-center m-auto pb-10'>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: .5, delay: .2 }}
+                className='max-w-4xl md:py-4 w-full flex items-center justify-center m-auto pb-10'>
                 <div className="flex items-center gap-[5rem] rounded-md  justify-center relative md:px-5 w-full">
                     <div className="flex flex-1 justify-center bg-white w-full flex-col md:border-2 smd:hadow-lg rounded-2xl items-center gap-2 p-5 md:p-5 ">
                         <div className="m-auto  py-2">
@@ -139,15 +142,15 @@ const SignupPage = () => {
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-2 md:gap-4">
-                                <InputField required={true} inputParam={'user_name'} type={'text'} labeValue={'newId'} inputlabel={'create a new ID'} />
-                                <InputField required={true} inputParam={'password'} type={'password'} labeValue={'new_password'} inputlabel={'create a password'} />
+                                    <InputField required={true} inputParam={'user_name'} type={'text'} labeValue={'newId'} inputlabel={'create a new ID'} />
+                                    <InputField required={true} inputParam={'password'} type={'password'} labeValue={'new_password'} inputlabel={'create a password'} />
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-x-4 gap-y-2 md:gap-y-4">
                                     {(activeTab === 'jobSeeker' || activeTab === 'trainingSeeker') && (
                                         <>
                                             <InputField inputParam={'name'} type={'text'} labeValue={'name'} inputlabel={'Name'} required={true} />
-                                            <InputField inputParam={'dob'} type={'date'} labeValue={'DOB'} inputlabel={'Date of Birth'} Style={'h-[60px]'} required={true}  />
+                                            <InputField inputParam={'dob'} type={'date'} labeValue={'DOB'} inputlabel={'Date of Birth'} Style={'h-[60px]'} required={true} />
                                             <InputField inputParam={'age'} type={'number'} labeValue={'age'} inputlabel={'Age'} required={true} />
                                             <InputField inputParam={'nationality'} type={'text'} labeValue={'nationality'} inputlabel={'Nationality'} required={true} />
                                         </>
@@ -350,7 +353,7 @@ const SignupPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

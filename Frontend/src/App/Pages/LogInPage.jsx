@@ -4,6 +4,7 @@ import Logo from '../../../public/Textile-black-logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import InputField from '../Components/InputField';
 import toast, { Toaster } from 'react-hot-toast';
+import { motion } from 'framer-motion'
 
 
 const LogInPage = () => {
@@ -67,7 +68,12 @@ const LogInPage = () => {
 
 
   return (
-    <div className="max-w-lg w-full flex items-center justify-center h-screen m-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: .5, delay: .2}}
+      className="max-w-lg w-full flex items-center justify-center h-screen m-auto">
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <div className="flex items-center gap-[5rem]  rounded-md justify-center relative md:px-5 w-full">
         <div className="flex flex-1 justify-center bg-white w-full flex-col md:border-2 rounded-2xl md:shadow-lg shadow-theme-500 items-center gap-2 px-5 md:p-6 h-screen  md:h-auto">
@@ -143,7 +149,7 @@ const LogInPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
